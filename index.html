@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="uk">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Кошик покупок</title>
+        <link rel="stylesheet" href="app.css" />
+    </head>
+    <body>
+        <section id="item-list">
+            <div id="add-item">
+                <input type="text" placeholder="Назва товару" />
+                <button data-tooltip="Додає">Додати</button>
+            </div>
+            <div class="item">
+                <div class="item-name crossed">Помідори</div>
+                <div class="item-num">
+                    <p>2</p>
+                </div>
+                <div class="item-act">
+                    <button class="buy-button" data-tooltip="Купити">
+                        Не куплено
+                    </button>
+                </div>
+            </div>
+            <div class="item">
+                <div class="item-name">Печиво</div>
+                <div class="item-num">
+                    <button class="minus" data-tooltip="Зменшує">-</button>
+                    <p>2</p>
+                    <button class="plus" data-tooltip="Збільшує">+</button>
+                </div>
+                <div class="item-act">
+                    <button class="buy-button" data-tooltip="Купити">
+                        Не куплено
+                    </button>
+                    <button class="delete-button" data-tooltip="Видалити">
+                        &#x2716;
+                    </button>
+                </div>
+            </div>
+            <div class="item">
+                <div class="item-name">
+                    <input type="text" placeholder="Сир" />
+                </div>
+                <div class="item-num">
+                    <button class="minus" data-tooltip="Зменшує">-</button>
+                    <p>1</p>
+                    <button class="plus" data-tooltip="Збільшує">+</button>
+                </div>
+                <div class="item-act">
+                    <button class="buy-button" data-tooltip="Купити">
+                        Не куплено
+                    </button>
+                    <button class="delete-button" data-tooltip="Видалити">
+                        &#x2716;
+                    </button>
+                </div>
+            </div>
+        </section>
+        <section id="item-info">
+            <div><h1>Залишилося</h1></div>
+            <div class="left">
+                <div>
+                    <p>Печиво</p>
+                    <p class="num">2</p>
+                </div>
+                <div>
+                    <p>Сир</p>
+                    <p class="num">1</p>
+                </div>
+            </div>
+            <div><h1>Куплено</h1></div>
+            <div class="bought">
+                <div class="crossed">
+                    <p>Помідори</p>
+                    <p class="num">1</p>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <div id="badge">
+                <p>Список покупок</p>
+                <p>
+                    Автор<br />
+                    Кондрашов Тимофій
+                </p>
+            </div>
+        </footer>
+    </body>
+</html>
