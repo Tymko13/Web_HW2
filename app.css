@@ -1,6 +1,7 @@
 body {
     background-color: lightgrey;
     display: flex;
+    align-items: start;
     font-family: Arial, Helvetica, sans-serif;
     height: 100vh;
     flex-wrap: wrap;
@@ -9,6 +10,10 @@ body {
 
 div {
     display: flex;
+}
+
+p {
+    white-space: nowrap;
 }
 
 section > div {
@@ -20,11 +25,10 @@ section > div {
     background-color: white;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     border-radius: 0.5em;
-    /* padding: 0.5em 1rem; */
     margin: 2em 1em;
-    max-height: 210px;
+    box-shadow: 0 0 10px 2px darkgrey;
 }
 
 #item-list {
@@ -44,11 +48,13 @@ section > div {
     flex: 1;
     box-sizing: border-box;
     padding: 0.5em 10px;
+    max-height: 55px;
+    min-height: 55px;
 }
 
 #add-item > input {
     box-sizing: border-box;
-    padding: 0.5em;
+    padding: 5px;
     height: 3em;
     flex: 3;
     border-radius: 0.5em 0 0 0.5em;
@@ -70,12 +76,12 @@ section > div {
 }
 
 section > div {
-    border-bottom: 1px solid darkgray;
+    border-top: 1px solid darkgray;
     flex: 1;
 }
 
-section > div:last-child {
-    border-bottom: none;
+section > div:first-child {
+    border-top: none;
 }
 
 .item {
@@ -83,6 +89,8 @@ section > div:last-child {
     justify-content: space-between;
     align-items: center;
     flex: 1;
+    max-height: 50px;
+    min-height: 50px;
 }
 
 .item-name {
@@ -198,15 +206,16 @@ button:hover {
 button:hover::before {
     width: 5em;
     height: 1em;
-    font-size: 1em;
+    font-size: 0.7em;
     opacity: 1;
-    bottom: 110%;
+    bottom: 120%;
     left: calc(50% - 3.5em);
 }
 
 .left,
 .bought {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
 }
 
@@ -218,6 +227,7 @@ button:hover::before {
     border-radius: 0.5em;
     background-color: lightgray;
     padding: 5px 10px;
+    margin: 5px 0;
     margin-right: 10px;
     height: 2em;
     box-sizing: border-box;
@@ -229,6 +239,7 @@ button:hover::before {
     border-radius: 50%;
     background-color: orange;
     color: white;
+    text-decoration-color: white;
     font-weight: bold;
     width: 1.5em;
     height: 1.5em;
@@ -243,13 +254,17 @@ h1 {
     align-items: end;
 }
 
+.head {
+    padding-top: 2.5px;
+}
+
 .crossed {
     text-decoration: line-through;
 }
 
 footer {
     width: 100%;
-    height: 100px;
+    height: 40px;
     align-self: flex-end;
     display: flex;
 }
@@ -264,7 +279,7 @@ footer {
     align-items: center;
     height: 30px;
     align-self: flex-end;
-    width: 160px;
+    width: 200px;
     margin-left: 1rem;
     padding: 25px 15px 10px 15px;
     border-radius: 10px 10px 0 0;
@@ -290,14 +305,13 @@ footer {
 
 @media (max-width: 710px) {
     body {
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
+        justify-content: center;
     }
 
     #item-info,
     #item-list {
-        width: 400px;
+        max-width: 440px;
+        min-width: 440px;
     }
 
     footer {
@@ -321,4 +335,16 @@ footer {
     #badge:hover {
         background-color: white;
     }
+}
+
+.hiding > div > button {
+    display: none;
+}
+
+.hiding > div > .buy-button {
+    display: block;
+}
+
+.hiding > .item-name > p {
+    text-decoration: line-through;
 }

@@ -8,30 +8,19 @@
     </head>
     <body>
         <section id="item-list">
-            <div id="add-item">
+            <form id="add-item">
                 <input type="text" placeholder="Назва товару" />
                 <button data-tooltip="Додає">Додати</button>
-            </div>
-            <div class="item">
-                <div class="item-name crossed">Помідори</div>
+            </form>
+            <div class="item hiding">
+                <div class="item-name"><p class="name">Помідори</p></div>
                 <div class="item-num">
+                    <button class="minus" data-tooltip="Мінус">-</button>
                     <p>2</p>
+                    <button class="plus" data-tooltip="Плюс">+</button>
                 </div>
                 <div class="item-act">
-                    <button class="buy-button" data-tooltip="Купити">
-                        Не куплено
-                    </button>
-                </div>
-            </div>
-            <div class="item">
-                <div class="item-name">Печиво</div>
-                <div class="item-num">
-                    <button class="minus" data-tooltip="Зменшує">-</button>
-                    <p>2</p>
-                    <button class="plus" data-tooltip="Збільшує">+</button>
-                </div>
-                <div class="item-act">
-                    <button class="buy-button" data-tooltip="Купити">
+                    <button class="buy-button" data-tooltip="Повернути">
                         Не куплено
                     </button>
                     <button class="delete-button" data-tooltip="Видалити">
@@ -40,17 +29,31 @@
                 </div>
             </div>
             <div class="item">
-                <div class="item-name">
-                    <input type="text" placeholder="Сир" />
-                </div>
+                <div class="item-name"><p class="name">Печиво</p></div>
                 <div class="item-num">
-                    <button class="minus" data-tooltip="Зменшує">-</button>
-                    <p>1</p>
-                    <button class="plus" data-tooltip="Збільшує">+</button>
+                    <button class="minus" data-tooltip="Мінус">-</button>
+                    <p>2</p>
+                    <button class="plus" data-tooltip="Плюс">+</button>
                 </div>
                 <div class="item-act">
                     <button class="buy-button" data-tooltip="Купити">
-                        Не куплено
+                        Куплено
+                    </button>
+                    <button class="delete-button" data-tooltip="Видалити">
+                        &#x2716;
+                    </button>
+                </div>
+            </div>
+            <div class="item">
+                <div class="item-name"><p class="name">Сир</p></div>
+                <div class="item-num">
+                    <button class="minus" data-tooltip="Мінус">-</button>
+                    <p>1</p>
+                    <button class="plus" data-tooltip="Плюс">+</button>
+                </div>
+                <div class="item-act">
+                    <button class="buy-button" data-tooltip="Купити">
+                        Куплено
                     </button>
                     <button class="delete-button" data-tooltip="Видалити">
                         &#x2716;
@@ -59,7 +62,7 @@
             </div>
         </section>
         <section id="item-info">
-            <div><h1>Залишилося</h1></div>
+            <div class="left head"><h1>Залишилося</h1></div>
             <div class="left">
                 <div>
                     <p>Печиво</p>
@@ -70,11 +73,11 @@
                     <p class="num">1</p>
                 </div>
             </div>
-            <div><h1>Куплено</h1></div>
+            <div class="bought head"><h1>Куплено</h1></div>
             <div class="bought">
                 <div class="crossed">
                     <p>Помідори</p>
-                    <p class="num">1</p>
+                    <p class="num">2</p>
                 </div>
             </div>
         </section>
@@ -87,5 +90,7 @@
                 </p>
             </div>
         </footer>
+
+        <script src="app.js"></script>
     </body>
 </html>
