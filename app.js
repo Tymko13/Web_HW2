@@ -43,6 +43,7 @@ list.addEventListener("click", (e) => {
         e.target.classList.contains("name") &&
         !e.target.parentElement.parentElement.classList.contains("hiding")
     ) {
+        const currentInfo = getInfo(e.target.innerText);
         const editor = document.createElement("input");
         editor.setAttribute("placeholder", e.target.innerText);
         editor.addEventListener("focusout", () => {
@@ -57,9 +58,11 @@ list.addEventListener("click", (e) => {
                     newName = newName.slice(0, 13).concat("...");
                 }
                 name.innerText = newName;
+                currentInfo.children[0].innerText = newName;
             }
             editor.parentElement.append(name);
             editor.remove();
+            
         });
         e.target.parentElement.append(editor);
         e.target.remove();
